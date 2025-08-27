@@ -32,3 +32,59 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# --- Bundler（vendor に gems を置く場合） ---
+/vendor/bundle/
+
+# --- Node / フロントエンド（使っている場合） ---
+/node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+# Webpacker
+/public/packs
+/public/packs-test
+# Vite
+/public/vite*
+.vite/
+
+# --- tmp のサブディレクトリ（.keep は残す） ---
+/tmp/cache/*
+!/tmp/cache/.keep
+/tmp/sockets/*
+!/tmp/sockets/.keep
+
+# --- ActiveStorage は既にOK。念のため tmp 側もカバー済み ---
+
+# --- 資格情報キー（複数環境の key） ---
+/config/credentials/*.key
+
+# --- Kamal（デプロイ秘密） ---
+.kamal/secrets*
+.kamal/*.env
+.kamal/tokens/
+
+# --- アップロード系（CarrierWave/Shrine 等を使う場合） ---
+/public/system
+/public/uploads
+/public/attachments
+
+# --- テスト生成物 / カバレッジ ---
+/coverage/
+/spec/examples.txt
+.rspec_status
+capybara-*.png
+/.byebug_history
+
+# --- SQLite を使っている場合だけ ---
+/db/*.sqlite3
+/db/*.sqlite3-*
+/db/*.sqlite3-journal
+
+# --- 環境ファイルのサンプルは許可 ---
+!.env.sample
+!.env.example
+
+# --- RuboCop キャッシュ ---
+.rubocop-cache
+.rubocop-https*
